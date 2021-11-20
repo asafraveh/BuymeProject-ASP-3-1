@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BuymeProject-master" />
+        <module name="BuymeProject-ASP-3" />
         <module name="BuyMeAutomationProject" />
-        <module name="BuymeProject-ASP-3-master" />
         <module name="ASP-BUYME" />
       </profile>
     </annotationProcessing>

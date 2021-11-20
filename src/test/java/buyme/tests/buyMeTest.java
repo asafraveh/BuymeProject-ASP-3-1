@@ -5,7 +5,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.*;
@@ -17,7 +16,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import buyme.base.DriverSingleton;
 import buyme.webPages.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -39,14 +37,12 @@ public class buyMeTest {
 
 
     @BeforeClass
-    public void runOnce() {
+    public void runonllyOnce() {
         String cwd = System.getProperty("user.dir");
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(cwd + "\\extent.html");  //Establish report location
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(cwd + "\\extent.html");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-        // name your test and add description
         test = extent.createTest("Test1", "Sample description");
-        // log results
         test.log(Status.INFO, "@Before class");
 
         try {
@@ -57,12 +53,11 @@ public class buyMeTest {
             test.log(Status.FAIL, "Driver connection failed! " + e.getMessage());
         }
         driver.get("https://buyme.co.il/");
-      //  driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
     }
 
-    @Test // Registration process
+    @Test // Registration sequence
     public void Registration() {
         try {
             loginPage.register();
@@ -78,7 +73,7 @@ public class buyMeTest {
         }
     }
 
-    @Test // Login process
+    @Test // Login sequence
     public void test01loginToBuyMe() {
         try {
             loginPage.submitLogin();
@@ -90,11 +85,11 @@ public class buyMeTest {
 
     }
 
-    @Test// Search for gift filters
+    @Test// Search from gift filters
     public void test02findGift() {
       try {
           Thread.sleep(6000);
-      //  WebDriverWait wait = new WebDriverWait(driver, 6);
+      //  WebDriverWait wait = new WebDriverWait(driver, 6);//I do not know why, these functions did not work I had to choose the least good option
          // driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         mainScreen.choosePrice();
             mainScreen.chooseArea();
@@ -134,7 +129,7 @@ public class buyMeTest {
         try {
             String senderName = "dgotlieb8@gmail.com";
 
-        //    howToSendPage.sendByMail();
+        //    howToSendPage.sendByMail();//This function does not always work
             howToSendPage.sendBySMS();
             howToSendPage.enterSenderName();
             howToSendPage.senderphonnumber();

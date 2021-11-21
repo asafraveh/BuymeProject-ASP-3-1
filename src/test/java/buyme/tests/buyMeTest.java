@@ -57,7 +57,7 @@ public class buyMeTest {
 
     }
 
-    @Test // Registration sequence
+    // @Test // Registration sequence
     public void Registration() {
         try {
             loginPage.register();

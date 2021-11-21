@@ -29,8 +29,8 @@ public class LoginPage extends BasePage {
 
     public void submitLogin() {
         clickElement(By.className("seperator-link"));
-        sendKeysToElement(By.xpath("//*[@id=\"ember1451\"]"), "asafravhe@gmail.com");
-        sendKeysToElement(By.xpath("//*[@id=\"ember1451\"]"), String.valueOf(Keys.TAB));
+        sendKeysToElement(By.cssSelector("input[placeholder=\"מייל\"]"), "asafravhe@gmail.com");
+       // sendKeysToElement(By.xpath("input[placeholder=\"מייל\"]"), String.valueOf(Keys.TAB));
         sendKeysToElement(By.cssSelector("input[placeholder=\"סיסמה\""),"A162534a");
         clickElement(By.cssSelector("button[type = submit]"));
     }

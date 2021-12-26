@@ -13,7 +13,7 @@ public class DriverSingleton {
 
     private static WebDriver driver;
 
-    public static WebDriver getDriverInstance()  {
+    public static void getDriverInstance()  {
         String type = null;
         try {
             type = getData("browserType");
@@ -25,15 +25,13 @@ public class DriverSingleton {
     System.setProperty("webdriver.chrome.driver",  "C:\\Users\\sioas\\Desktop\\drivers\\chromedriver.exe");
                  driver = new ChromeDriver();
                ChromeOptions chromeOptions = new ChromeOptions();
-               chromeOptions.addArguments("--headless");
-               driver = new ChromeDriver(chromeOptions);
+               //    chromeOptions.addArguments("--headless");
+         //      driver = new ChromeDriver(chromeOptions);
             }else if(type.equals("FF")){
                System.setProperty("webdriver.firefox.driver", "C:\\Users\\sioas\\Desktop\\drivers\\geckodriver.exe");
                driver = new FirefoxDriver();
            }
         }
-
-        return (ChromeDriver) driver;
     }
 
     private static String getData (String keyName) throws Exception{

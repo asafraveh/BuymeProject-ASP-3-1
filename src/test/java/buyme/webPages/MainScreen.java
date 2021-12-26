@@ -2,8 +2,6 @@ package buyme.webPages;
 
 import org.openqa.selenium.By;
 import buyme.base.BasePage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainScreen extends BasePage {
 

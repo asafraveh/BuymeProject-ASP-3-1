@@ -13,7 +13,7 @@ public class DriverSingleton {
 
     private static WebDriver driver;
 
-    public static void getDriverInstance()  {
+    public static WebDriver getDriverInstance()  {
         String type = null;
         try {
             type = getData("browserType");
@@ -32,6 +32,7 @@ public class DriverSingleton {
                driver = new FirefoxDriver();
            }
         }
+        return null;
     }
 
     private static String getData (String keyName) throws Exception{

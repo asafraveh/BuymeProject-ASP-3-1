@@ -113,7 +113,6 @@ public class buyMeTest {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 1);
             senderReceiverScreen.enterReceiverName();
-            senderReceiverScreen.enterTextForBlessing();
             senderReceiverScreen.uploadPhoto();
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[gtm=המשך]")));
            senderReceiverScreen.pressContinue();
